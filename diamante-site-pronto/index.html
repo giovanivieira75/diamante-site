@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="google" content="notranslate">
+    <meta name="theme-color" content="#371584">
+    <link rel="icon" href="/favicon.ico">
+    <title>Diamante-br</title>
+    <style>
+        /* @media screen and (max-width: 750px) {
+			font-size: 10px;
+		} */
+    </style>
+    <script defer="defer" src="/js/chunk-vendors.0d4f0537.js"></script>
+    <script defer="defer" src="/js/app.823098c3.js"></script>
+    <link href="/css/chunk-vendors.8584a814.css" rel="stylesheet">
+    <link href="/css/app.34c0cb7a.css" rel="stylesheet">
+</head>
+
+<body><noscript><strong>We're sorry but Diamante-br doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+    <div id="app"></div>
+    <script>
+        /**
+        		* ================================================
+        		*   设置根元素font-size
+        		* 当设备宽度为375(iPhone6)时，根元素font-size=16px; 
+        		× ================================================A
+        		*/
+        (function(doc, win) {
+            var docEl = win.document.documentElement;
+            var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+            var refreshRem = function() {
+                var clientWidth = screen.width || win.innerWidth ||
+                    doc.documentElement.clientWidth ||
+                    doc.body.clientWidth;
+
+                if (clientWidth > 516) {
+                    var clientWidth = 516
+                    var footwidth = 345
+
+                }
+                if (!clientWidth) return;
+                var fz;
+                var width = clientWidth;
+                fz = 10 * width / 375;
+                docEl.style.fontSize = fz + 'px';
+            };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, refreshRem, false);
+            doc.addEventListener('DOMContentLoaded', refreshRem, false);
+            refreshRem();
+
+        })(document, window);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
+</body>
+
+</html>
